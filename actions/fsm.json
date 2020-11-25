@@ -1,0 +1,212 @@
+{
+    "initializing": {
+        "base": {
+            "action": {"path": "actions.initialize.initialize", "args": [], "kwargs": {}},
+            "result": {
+                "ack_gui": {"entry": null, "state": "stoping_gui", "event": null, "args": [], "kwargs": {}},
+                "ack_cli": {"entry": null, "state": "stoping_cli", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        }
+    },
+    "recording_gui": {
+        "stop": {
+            "action": {"path": "actions.recording.stop", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        }
+    },
+    "playing_gui": {
+        "pause": {
+            "action": {"path": "actions.playing.pause", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "pausing_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "stop": {
+            "action": {"path": "actions.playing.stop", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        }
+    },
+    "pausing_gui": {
+        "pause": {
+            "action": {"path": "actions.pausing.pause", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "playing_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "stop": {
+            "action": {"path": "actions.pausing.stop", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "loop": {
+            "action": {"path": "actions.pausing.loop", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "pausing_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "velocity": {
+            "action": {"path": "actions.pausing.velocity", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "pausing_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        }
+    },
+    "stoping_gui": {
+        "record": {
+            "action": {"path": "actions.stoping.record", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "recording_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "play": {
+            "action": {"path": "actions.stoping.play", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "playing_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "loop": {
+            "action": {"path": "actions.stoping.loop", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "save": {
+            "action": {"path": "actions.stoping.save", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "stoping_gui", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "velocity": {
+            "action": {"path": "actions.stoping.velocity", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "load": {
+            "action": {"path": "actions.stoping.load", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_gui", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "stoping_gui", "event": null, "args": [], "kwargs": {}}
+            }
+        }
+    },
+    "recording_cli": {
+        "stop": {
+            "action": {"path": "actions.recording.stop", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_cli", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        }
+    },
+    "playing_cli": {
+        "pause": {
+            "action": {"path": "actions.playing.pause", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "pausing_cli", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "stop": {
+            "action": {"path": "actions.playing.stop", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        }
+    },
+    "pausing_cli": {
+        "pause": {
+            "action": {"path": "actions.pausing.pause", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "playing_cli", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "stop": {
+            "action": {"path": "actions.pausing.stop", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        }
+    },
+    "stoping_cli": {
+        "record": {
+            "action": {"path": "actions.stoping.record", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "recording_cli", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "play": {
+            "action": {"path": "actions.stoping.play", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "playing_cli", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "loop": {
+            "action": {"path": "actions.stoping.loop", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_cli", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "save": {
+            "action": {"path": "actions.stoping.save", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "velocity": {
+            "action": {"path": "actions.stoping.velocity", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_cli", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "load": {
+            "action": {"path": "actions.stoping.load", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_cli", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        },
+        "check": {
+            "action": {"path": "actions.stoping.check", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": "stoping_cli", "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": "finalizing", "event": null, "args": [], "kwargs": {}}
+            }
+        }
+    },
+    "finalizing": {
+        "base": {
+            "action": {"path": "actions.finalize.finalize", "args": [], "kwargs": {}},
+            "result": {
+                "ack": {"entry": null, "state": null, "event": null, "args": [], "kwargs": {}},
+                "nak": {"entry": null, "state": null, "event": null, "args": [], "kwargs": {}}
+            }
+        }
+    }
+}

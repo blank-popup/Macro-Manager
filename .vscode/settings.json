@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "C:\\Users\\mike\\miniconda3\\envs\\gui\\python.exe",
+    "python.linting.pylintArgs": [
+        "--generate-members=yes",
+        "--extension-pkg-whitelist=wx",
+    ],
+}
