@@ -106,8 +106,9 @@ def save_file(self: MMMacroFSM, filepath):
     if not path.exists():
         if path.suffix == mu.k_extension_mmm:
             try:
+                data = mu.SaveData(target=mu.target, loglevel=mu.loglevel, velocity=mu.velocity, term_sleep=mu.term_sleep, loop=mu.loop, KMs=self.kms)
                 with open(path, 'wb') as f:
-                    pickle.dump(self.kms, f)
+                    pickle.dump(data, f)
                 logger.info('Saved MMMacro: [{0}]'.format(path))
             except Exception as e:
                 logger.error('{0} [{1}]\n{2}\n{3}'.format('Cannot save', path, str(e), ''.join(traceback.format_tb(e.__traceback__))))
@@ -191,8 +192,15 @@ def load_file(self: MMMacroFSM, filepath):
         if path.is_file():
             if path.suffix == mu.k_extension_mmm:
                 try:
+                    savedata = mu.SaveData(target=mu.target, loglevel=mu.loglevel, velocity=mu.velocity, term_sleep=mu.term_sleep, loop=mu.loop, KMs=self.kms)
                     with open(path, 'rb') as f:
-                        self.kms = pickle.load(f)
+                        data = pickle.load(f)
+                        mu.target = data.target
+                        mu.loglevel = data.loglevel
+                        mu.velocity = data.velocity
+                        mu.term_sleep = data.term_sleep
+                        mu.loop = data.loop
+                        self.kms = data.KMs
                     logger.info('Loaded MMMacro: [{0}]'.format(path))
                 except Exception as e:
                     logger.error('{0} [{1}]\n{2}\n{3}'.format('Cannot load', path, str(e), ''.join(traceback.format_tb(e.__traceback__))))

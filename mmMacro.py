@@ -65,13 +65,15 @@ class MMPlayer(threading.Thread):
                         return
                     event_thread_play.wait()
                     self.count_sleep = jj
-                    position_next = self.get_next_position(km, jj)
-                    self.cm.move(position_next[0] - self.cm.position[0], position_next[1] - self.cm.position[1])
+                    if mu.target == mu.KMTarget.KM or mu.target == mu.KMTarget.M:
+                        position_next = self.get_next_position(km, jj)
+                        self.cm.move(position_next[0] - self.cm.position[0], position_next[1] - self.cm.position[1])
                     time.sleep(mu.term_sleep)
                 if self.terminate_play:
                     return
                 event_thread_play.wait()
-                self.cm.move(km.position[0] - self.cm.position[0], km.position[1] - self.cm.position[1])
+                if mu.target == mu.KMTarget.KM or mu.target == mu.KMTarget.M:
+                    self.cm.move(km.position[0] - self.cm.position[0], km.position[1] - self.cm.position[1])
                 time.sleep(mu.term_basic_sleep)
                 self.play_km(km)
             if not self.macroFSM.allow_loop and not self.terminate_play:

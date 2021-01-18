@@ -61,4 +61,4 @@ I would like to upgrade
 
 
 # ETC
-At first, I coded FSM(Finite State Machine). Because I had learned it in digital system class, when I heard about FSM pattern of coding it I was very interested in the pattern of FSM and developed it. If you think of FSM, it has many advantages. For example, flow of code is simple because the event and next state is restricted according to the current state and several people's working togerther is easy because each can code according to the state and event. Finally, I applied macro manager to FSM. That's MikeMary Macro.
+At first, I coded FSM(Finite State Machine). Because I had learned it in digital system class, when I heard about FSM pattern I was very interested in and developed it. If you think of FSM, it has many advantages. For example, the flow of code is simple because the event and next state is restricted according to the current state and several people's working togerther is easy because each can code according to the state and event. Finally, I applied macro manager to FSM. That's MikeMary Macro.

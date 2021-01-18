@@ -182,3 +182,12 @@ loglevel = 20
 velocity = 3.0
 term_sleep = term_basic_sleep / velocity
 loop = False
+
+@dataclass
+class SaveData:
+    target: KMTarget = KMTarget.KM
+    loglevel: int = loglevel
+    velocity: float = velocity
+    term_sleep: float = term_sleep
+    loop: bool = False
+    KMs: list = field(default_factory=list)
